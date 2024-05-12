@@ -1,0 +1,61 @@
+{% extends 'base/master.html' %}
+{% block title %}
+title here
+{% endblock %}
+{% block head %}{% endblock %}
+
+{% block css %}
+<style></style>
+{% endblock %}
+{% block content %}
+<section>
+    <div class="container ">
+        <div class="row ">
+            <div class="p-5 mb-4 bg-light rounded-3">
+                <div class="container-fluid py-5">
+                    <h1 class="display-5 fw-bold">Verify Certificate</h1>
+                    <p class="col-md-8 fs-4">
+                        Using a series of utilities, you can create this jumbotron, just
+                        like the one in previous versions of Bootstrap. Check out the
+                        examples below for how you can remix and restyle it to your liking.
+                    </p>
+                    <form method="post">{% csrf_token %}
+                        <div class="mb-3">
+                            <label for="hash" class="form-label">Please enter the unique certifacate id</label>
+                            <input type="text" class="form-control form-control-lg" name="hash" id="hash"
+                                aria-describedby="helpId" placeholder="certificate id here" />
+                            <small id="helpId" class="form-text text-muted">The certificates are generate using
+                                blockchains
+                                and have a unique id to them, which cannot be same for other certifcate</small>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Verify</button>
+
+                    </form>
+                </div>
+            </div>
+            <div class="p-5 mb-4  rounded-3">
+
+
+                {% if certificate %}
+                <div class="d-flex justify-content-between ">
+                    <p> Name : {{certificate.name}} </p>
+                    <p> Course : {{certificate.course}} </p>
+                    <p> Date : {{certificate.created_at}} </p>
+                    <p class="">
+                        {{status}}
+                    </p>
+                </div>
+                <hr>
+                <img src="{{certificate.url}}" alt="" class="img-fluid">
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+{% block js %}
+<script>
+
+</script>
+{% endblock %}

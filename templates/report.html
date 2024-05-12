@@ -1,0 +1,36 @@
+{% extends 'base/master.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+title here
+{% endblock %}
+{% block head %}{% endblock %}
+
+{% block css %}
+<style></style>
+{% endblock %}
+{% block content %}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <form method="post" enctype="multipart/form-data">
+                            {{ form|crispy }}
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <button>Submit Certificate Issue</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+{% block js %}
+<script>
+
+</script>
+{% endblock %}

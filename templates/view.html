@@ -1,0 +1,50 @@
+{% extends 'base/master.html' %}
+{% block title %}
+title here
+{% endblock %}
+{% block head %}{% endblock %}
+
+{% block css %}
+<style></style>
+{% endblock %}
+{% block content %}
+<section>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-12 mb-3">
+                <h1>Uploaded By {{upload.user.username|title}}</h1>
+                <span>
+                    <i class="fas fa-calendar"></i>
+                    {{upload.created_at.date}}
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                {{data|safe}}
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 d-grid mx-auto gap-2">
+                <a href="{% url 'generate' upload.id %}" class="btn btn-primary">
+                    <i class="fas fa-certificate"></i>
+                    Generate Certificate
+                </a>
+                <a href="{% url 'list' %}" class="btn btn-dark">
+                    <i class="fas fa-arrow-left"></i>
+                    Back
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+{% block js %}
+<script>
+
+</script>
+{% endblock %}

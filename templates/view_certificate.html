@@ -1,0 +1,35 @@
+{% extends 'base/master.html' %}
+{% block title %}
+title here
+{% endblock %}
+{% block head %}{% endblock %}
+
+{% block css %}
+<style></style>
+{% endblock %}
+{% block content %}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mb-5">
+                <div class="text-center">
+                    <a href="{% url 'download' certificate.id %}" class="btn btn-primary ">
+                        <i class="fas fa-download"></i> Download Certificate
+                    </a>
+                    <a href="{% url 'verify_cert' %}" class="btn btn-success">
+                        <i class="fas fa-check"></i> Verify Certificate
+                    </a>
+                </div>
+                <div class="col">
+                    <img src="{{certificate.url}}" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+{% block js %}
+<script>
+
+</script>
+{% endblock %}

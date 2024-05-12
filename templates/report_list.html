@@ -1,0 +1,88 @@
+{% extends 'base/master.html' %}
+{% block title %}
+title here
+{% endblock %}
+{% block head %}{% endblock %}
+
+{% block css %}
+<style></style>
+{% endblock %}
+{% block content %}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- table of all the upload dataset -->
+                <div class="table-responsive">
+                    <table class="table border-0">
+                        <thead>
+                            <tr>
+                                <th scope="col">#ide</th>
+                                <th scope="col">Certificate ID</th>
+                                <th scope="col">Complaint From</th>
+                                <th scope="col">Email Address</th>
+                                <th scope="col">Message</th>
+                                <th scope="col">Action</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            {% for item in reports %}
+                            <tr>
+                                <th scope="row">{{item.id}}</th>
+                                <td>
+
+                                    {% if item.cid %}
+                                    <a href="{% url 'view_cert' item.cid %}" target="_blank" class="text-dark">
+                                        <img src="{{item.url}}" alt="" class="img-fluid" style="width: 50px;">
+                                    </a>
+                                    {% else %}
+                                    <span class="badge rounded-pill text-bg-danger">
+                                        Invalid Certificate Id
+                                        submitted
+                                    </span>
+
+                                    {% endif %}
+
+                                </td>
+                                <td>{{item.name}}</td>
+                                <td>{{item.email}}</td>
+                                <td>{{item.issue}}</td>
+                                <td class="d-flex gap-1">
+                                    <!-- delete and download -->
+                                    {% if item.cid %}
+                                    <a href="{% url 'delete_cert' item.cid %}" class="btn btn-danger">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                    <a href="{% url 'download' item.cid %}" class="btn btn-primary">
+                                        <i class="fas fa-download"></i>
+                                    </a>
+                                    <a href="{% url 'verify_cert' %}" class="btn btn-success">Verify</a>
+                                    {% else %}
+                                    <a href="{% url 'delete_report' item.id %}" class="btn btn-danger">
+                                        <i class="fas fa-trash"></i> Remove
+                                    </a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="4" class="text-center">No data available</td>
+                            </tr>
+                            {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+{% block js %}
+<script>
+
+</script>
+{% endblock %}

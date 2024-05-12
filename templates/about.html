@@ -1,0 +1,77 @@
+{% extends 'base/master.html' %}
+{% block title %}
+title here
+{% endblock %}
+{% block head %}{% endblock %}
+
+{% block css %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        /* .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        } */
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        .about-content {
+            margin-top: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+        {% endblock %}
+        {% block content %}
+
+<body>
+    <section id="about">
+    <div class="container">
+        <h1>About BlockCertify</h1>
+        <div class="about-content">
+            <p>Welcome to BlockCertify, a cutting-edge platform for generating and validating certificates using blockchain technology.</p>
+            <p>Our mission is to revolutionize the certification process by leveraging the security and immutability of blockchain. With our system, you can create tamper-proof certificates and easily verify their authenticity.</p>
+            <p>Key Features:</p>
+            <ul>
+                <li>Secure Certificate Generation: Utilize blockchain to generate certificates that cannot be tampered with or falsified.</li>
+                <li>Effortless Verification: Verify the authenticity of certificates instantly using blockchain technology.</li>
+                <li>User-Friendly Interface: Our intuitive interface makes it easy to create and verify certificates, ensuring a seamless experience for users.</li>
+                <li>Scalable Solution: Whether you need to issue certificates for individuals or organizations, our system can scale to meet your needs.</li>
+            </ul>
+            <p>Ready to experience the future of certificate management? Get started today!</p>
+            <!-- <a href="#" class="button">Get Started</a> -->
+        <!-- </div> -->
+    </div>
+    </section>
+
+    <script>
+        // JavaScript code can be added here if needed
+    </script>
+</body>
+
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends 'base/master.html' %}
+{% block title %}
+title here
+{% endblock %}
+{% block head %}{% endblock %}
+
+{% block css %}
+<style></style>
+{% endblock %}
+{% block content %}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- table of all the upload dataset -->
+                <div class="table-responsive">
+                    <table class="table border-0">
+                        <thead>
+                            <tr>
+                                <th scope="col">#ide</th>
+                                <th scope="col">File</th>
+                                <th scope="col">Created At</th>
+                                <th scope="col">Action</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            {% for item in uploads %}
+                            <tr>
+                                <th scope="row">{{item.id}}</th>
+                                <td>
+                                    <a href="{% url 'view' item.id %}" target="_blank" class="text-dark">
+                                        {{item.file}}
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                </td>
+                                <td>{{item.created_at}}</td>
+                                <td class="d-flex gap-1">
+                                    <a href="{% url 'generate' item.id %}" class="btn btn-primary">
+                                        <i class="fas fa-certificate"></i> Generate Certificate</a>
+                                    </a>
+                                    <a href="{% url 'delete' item.id %}" class="btn btn-danger">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+
+                                </td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="4" class="text-center">No data available</td>
+                            </tr>
+                            {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+{% block js %}
+<script>
+
+</script>
+{% endblock %}

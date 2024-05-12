@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Profile - BlockCertify</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .profile-info {
+            margin-bottom: 20px;
+        }
+        .profile-info label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>View Your Profile</h1>
+        <div class="profile-info">
+            <label>First Name:</label>
+            <p id="firstName">John</p>
+        </div>
+        <div class="profile-info">
+            <label>Last Name:</label>
+            <p id="lastName">Doe</p>
+        </div>
+        <div class="profile-info">
+            <label>Email Address:</label>
+            <p id="email">john.doe@example.com</p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // JavaScript code to fetch and display user profile
+        // Dummy profile data for demonstration
+        var profileData = {
+            firstName: "John",
+            lastName: "Doe",
+            email: "john.doe@example.com"
+        };
+
+        // Display profile information
+        document.getElementById('firstName').innerText = profileData.firstName;
+        document.getElementById('lastName').innerText = profileData.lastName;
+        document.getElementById('email').innerText = profileData.email;
+    </script>
+</body>
+</html>

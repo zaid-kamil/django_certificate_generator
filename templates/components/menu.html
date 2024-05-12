@@ -1,0 +1,32 @@
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top header-inner-pages">
+    <div class="container d-flex align-items-center justify-content-lg-between">
+
+        <h1 class="logo me-auto me-lg-0"><a href="{% url 'home' %}">BlockCertify<span></span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="/static/img/logo.png" alt="" class="img-fluid"></a>-->
+
+        <nav id="navbar" class="navbar order-last order-lg-0">
+            <ul>
+                <li><a class="nav-link scrollto" href="{% url 'home' %}">Home</a></li>
+                <li><a class="nav-link scrollto" href="{% url 'about' %}">About</a></li>
+                <li><a class="nav-link scrollto" href="{% url 'services' %}">Services</a></li>
+            
+                <li><a class="nav-link scrollto" href="{% url 'teams' %}">Team</a></li>
+                
+                <li><a class="nav-link scrollto" href="{% url 'contact' %}">Contact</a></li>
+                {% if user.is_authenticated %}
+                <li><a class="nav-link scrollto" href="{% url 'dashboard' %}">Dashboard</a></li>
+                <li><a class="nav-link scrollto" href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                <li><a class="nav-link scrollto" href="{% url 'login' %}">Login</a></li>
+                {% endif %}
+                
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+        <a href="{% url 'get_started' %}" class="get-started-btn scrollto">Get Started</a>
+
+    </div>
+</header><!-- End Header -->

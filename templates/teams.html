@@ -1,0 +1,71 @@
+{% extends 'base/master.html' %}
+{% block title %}
+title here
+{% endblock %}
+{% block head %}{% endblock %}
+
+{% block css %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        /* .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        } */
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .team-member {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 30px;
+        }
+        .team-member:last-child {
+            border-bottom: none;
+        }
+        .team-member img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            display: block;
+            margin: 0 auto 20px;
+        }
+        .team-member h2 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        .team-member p {
+            text-align: center;
+            color: #666;
+        }
+    </style>
+    {% endblock %}
+    {% block content %}
+
+<body>
+    <section id="teams">
+        <div class="container">
+            <h1>Meet Our Team</h1>
+            <div class="team-member">
+            <h2>Siddharth Singh</h2>
+            <p>Founder and CEO</p>
+        </div>
+        <div class="team-member">
+            <h2>Anurag Kumar</h2>
+            <p>Lead Developer</p>
+        </div>
+        </div>
+    </section>
+</body>
+
+{% endblock %}
